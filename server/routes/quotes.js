@@ -36,11 +36,10 @@ router.get('/filtered-quotes', async (req, res) => {
             "quote": {"$regex": quote ? quote : ''},
             "category": {"$regex": category ? category : ''},
         }) 
-        
+
         res.status(200).json(filteredQuotes);
     }
     catch (e){
-        console.log(e);
         res.status(500).json({ "error:": "server error" });
     }
 

@@ -53,7 +53,6 @@ router.post( "/signup",
                 }
             );
         } catch (err) {
-            console.log(err.message);
             res.status(500).send("Error in Saving");
         }
     }
@@ -99,7 +98,6 @@ router.post( "/login",
           }
         );
       } catch (e) {
-        console.error(e);
         res.status(500).json({
           message: "Server Error"
         });
