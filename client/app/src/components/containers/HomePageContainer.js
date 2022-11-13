@@ -5,6 +5,11 @@ function HomepageContainer(){
 
     const [quote, setQuote] = useState("");
 
+    async function generateNewQuote(){
+        let newQuote = await getRandomQuote();
+        setQuote(newQuote);
+    }
+
     useEffect( () => {
         
         async function getQuote(){
@@ -16,8 +21,12 @@ function HomepageContainer(){
 
     return (
         <div>
-            <h1>{ quote }</h1>
+            <h1>{ quote.quote }</h1>
+            <h2>{ quote.author }</h2>
+
+            <button onClick={generateNewQuote}>Get Quote</button>
         </div>
+
     )
 }
 
