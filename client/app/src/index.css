@@ -1,13 +1,85 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@800&family=Oswald:wght@700&display=swap');
+
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-family: "Montserrat", sans-serif;
+  background: rgb(200,225,225);
+  background: radial-gradient(circle, rgba(200,225,225,1) 41%, rgba(15,60,43,1) 80%);
+}
+
+.navMenu{
+  background: rgb(200,225,225);
+  background: radial-gradient(circle, rgba(200,225,225,1) 41%, rgba(15,39,60,1) 80%);
+  padding: 10px;
+  display: flex;
+  font-family: 'Oswald', sans-serif;
+
+
+}
+.navMenu a {
+  color: #edf756;
+  text-decoration: none;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  font-weight: 500;
+  display: inline-block;
+  width: 80px;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.navMenu a:hover {
+  color: #fddb3a;
+  cursor: pointer;
+}
+
+
+.mainQuote{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-right: auto; 
+  margin-left: auto;
+  width: 50%;
+  margin-top: 20px;
+  font-family: 'Mukta', sans-serif;
+
+}
+
+.mainQuote *{
+  margin-top: 10px;
+}
+
+.authorH{
+  color: #00008B;
+}
+
+.standardButton{
+  background-color:   rgba(15,60,43,1); 
+  color: #fddb3a;;
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.standardButton:hover{
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.loginButton{
+  margin-left: auto;
 }

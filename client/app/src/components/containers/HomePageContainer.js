@@ -20,11 +20,11 @@ function HomepageContainer(){
      }, [])
 
     return (
-        <div>
+        <div className="mainQuote">
             <h1>{ quote.quote }</h1>
-            <h2>{ quote.author }</h2>
+            <h2 className="authorH">{ quote.author }</h2>
 
-            <button onClick={generateNewQuote}>Get Quote</button>
+            <button className="standardButton" onClick={generateNewQuote}>Get Quote</button>
         </div>
 
     )

@@ -1,6 +1,7 @@
 import React from "react";
 import './App.css';
 import HomepageContainer from './components/containers/HomePageContainer';
+import Navigation from "./components/containers/Navigation";
 import {
   BrowserRouter as Router,
   Routes,
@@ -11,12 +12,13 @@ import {
 
 function App() {
   return (
+
     <Router>
+       <Navigation />
+       
       <Routes>
 
-        <Route path="/" element={ <HomepageContainer />}>
-           
-        </Route>
+        <Route path="/" element={ <HomepageContainer />}></Route>
         
       </Routes>
       
