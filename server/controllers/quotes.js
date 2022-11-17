@@ -1,22 +1,11 @@
-const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
-
-const pseudoModel = mongoose.model('quotesDB',
-    new Schema({
-        quote: String,
-        author: String,
-        category: String,
-        id: Number
-    }),
-    
-    'quotesDB');
+const pseudoModelQuote = require("../utils/pseudoModel");
 
 const randomQuoteController = async (req, res) => {
 
     try {
-        let totalCount = await pseudoModel.countDocuments({}).exec();
+        let totalCount = await pseudoModelQuote.pseudoModelQuote.countDocuments({}).exec();
         randomInt = Math.floor(Math.random() * totalCount);
-        quote = await pseudoModel.findOne({}).skip(randomInt);
+        quote = await pseudoModelQuote.pseudoModelQuote.findOne({}).skip(randomInt);
         res.status(200).json(quote);
     }
     catch (e) {
@@ -29,7 +18,7 @@ const filteredQuotesController = async (req, res) => {
     try{
         const {author, quote, category} = req.query;
 
-        filteredQuotes = await pseudoModel.find({
+        filteredQuotes = await pseudoModelQuote.pseudoModelQuote.find({
             "author": {"$regex": author ? author : ''},
             "quote": {"$regex": quote ? quote : ''},
             "category": {"$regex": category ? category : ''},
