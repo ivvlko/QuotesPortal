@@ -8,6 +8,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import GameContainer from "./components/containers/GameContainer";
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
       <Routes>
 
         <Route path="/" element={ <HomepageContainer />}></Route>
+        <Route path="/play" element={ <GameContainer />}></Route>
         
       </Routes>
       
