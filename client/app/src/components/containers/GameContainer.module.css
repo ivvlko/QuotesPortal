@@ -1,0 +1,35 @@
+.gameContainer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0 auto; 
+    width: 25%;
+    margin-top: 20px;
+}
+
+.gameModeButton{
+    width: 180px;
+    height: 60px;
+    cursor: pointer;
+    background:#68a084;
+    border: 1px solid #0a8667;
+    outline: none;
+    transition: 1s ease-in-out;
+    color: #fddb3a;
+    font-size: large;
+}
+
+.gameModeButton:hover {
+    transition: 1s ease-in-out;
+    background: #4fdab0;
+  }
+
+.btn:hover svg {
+    stroke-dashoffset: -480;
+  }
+
+.btn span {
+    color: white;
+    font-size: 18px;
+    font-weight: 100;
+  }
