@@ -17,19 +17,12 @@
     transition: 1s ease-in-out;
     color: #fddb3a;
     font-size: large;
+    text-decoration: none;
+    text-align: center;
+    line-height: 3;
 }
 
 .gameModeButton:hover {
     transition: 1s ease-in-out;
     background: #4fdab0;
-  }
-
-.btn:hover svg {
-    stroke-dashoffset: -480;
-  }
-
-.btn span {
-    color: white;
-    font-size: 18px;
-    font-weight: 100;
   }

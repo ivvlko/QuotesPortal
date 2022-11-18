@@ -6,9 +6,9 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Link
 } from "react-router-dom";
 import GameContainer from "./components/containers/GameContainer";
+import Game from "./components/details/Game";
 
 
 function App() {
@@ -21,6 +21,7 @@ function App() {
 
         <Route path="/" element={ <HomepageContainer />}></Route>
         <Route path="/play" element={ <GameContainer />}></Route>
+        <Route path="/play/easy-game" element={ <Game />}></Route>
         
       </Routes>
       
