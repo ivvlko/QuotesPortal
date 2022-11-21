@@ -1,0 +1,23 @@
+.wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin: 0 auto; 
+    width: 50%;
+    margin-top: 20px;
+}
+
+.options{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 20rem;
+    /* Aligning elements left, center and right in flexbox */
+    /* float: left; */
+    margin: auto;
+    /* float: right; */
+}
+
+.options button {
+    flex: 0 50%;
+}
