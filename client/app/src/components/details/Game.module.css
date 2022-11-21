@@ -12,10 +12,8 @@
     flex-direction: row;
     flex-wrap: wrap;
     width: 20rem;
-    /* Aligning elements left, center and right in flexbox */
-    /* float: left; */
     margin: auto;
-    /* float: right; */
+    margin-top: 30px;
 }
 
 .options button {
