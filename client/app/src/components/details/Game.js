@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import randomShuffleArray from '../../services/gameUtils';
 import { getEasyQuestion } from '../../services/genericQueries';
+import styles from "./Game.module.css";
 
 export default function Game() {
 
@@ -22,13 +23,15 @@ export default function Game() {
         let shuffledOptions = randomShuffleArray(options);
 
         return (
-            <div>
+            <div className={styles.wrapper}>
                 <h1>{questionObject.quote}</h1>
-                {
-                    shuffledOptions.map((el) => {
-                        return <button key={el}>{el}</button>
-                    })
-                }
+                <div className={styles.options}>
+                    {
+                        shuffledOptions.map((el) => {
+                            return <button className="standardButton" key={el}>{el}</button>
+                        })
+                    }
+                </div>
             </div>
         )
     }
