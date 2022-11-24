@@ -19,3 +19,9 @@
 .options button {
     flex: 0 50%;
 }
+
+.loadingHeader{
+    color: #2323a4;
+    text-align: center;
+
+}
