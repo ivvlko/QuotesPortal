@@ -1,18 +1,20 @@
 import React, { useState, useEffect } from 'react';
-import randomShuffleArray from '../../services/gameUtils';
+import {randomShuffleArray, handleAnswer} from '../../services/gameUtils';
 import { getEasyQuestion } from '../../services/genericQueries';
 import styles from "./Game.module.css";
 
 export default function Game() {
 
     const [currentQuestion, setCurrentQuestion] = useState(null);
-    const [currentScore, setCurrentScore] = useState({});
+
+    const [score, setScore] = useState({correctAnswers: 0, incorrectAnswers: 0}); 
+
+    async function getQuestion() {
+        const response = await getEasyQuestion();
+        setCurrentQuestion(() => response);
+    }
 
     useEffect(() => {
-        async function getQuestion() {
-            const response = await getEasyQuestion();
-            setCurrentQuestion(() => response);
-        }
         getQuestion();
         
     }, [])
@@ -28,9 +30,14 @@ export default function Game() {
                 <div className={styles.options}>
                     {
                         shuffledOptions.map((el) => {
-                            return <button className="standardButton" key={el}>{el}</button>
+                            return <button onClick={handleAnswer.bind(this, score, setScore, currentQuestion, setCurrentQuestion, getQuestion, loadQuestionAndOptions)} className="standardButton" key={el}>{el}</button>
                         })
                     }
+                </div>
+
+                <div>
+                    <span>{score.correctAnswers}</span>
+                    <span>{score.incorrectAnswers}</span>
                 </div>
             </div>
         )
@@ -38,7 +45,7 @@ export default function Game() {
 
     return (
         <div>
-            { currentQuestion ? loadQuestionAndOptions(currentQuestion) : "loading.." }
+            { currentQuestion ? loadQuestionAndOptions(currentQuestion) : <h1 className={styles.loadingHeader}>Loading Next Question..</h1>}
         </div>
     )
 }

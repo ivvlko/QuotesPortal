@@ -1,4 +1,4 @@
-export default function randomShuffleArray(arr){
+export function randomShuffleArray(arr){
 
     let originalArrayCopy = [...arr];
     let shuffledArray = [];
@@ -11,4 +11,25 @@ export default function randomShuffleArray(arr){
 
     return shuffledArray;
 
+}
+
+
+export function handleAnswer( score, setScore, currentQuestion, setCurrentQuestion, getQuestion, loadQuestionAndOptions, e){
+    let newState = {...score};
+    if (currentQuestion.correctAnswer === e.target.innerHTML){
+        newState = {
+            correctAnswers: score.correctAnswers + 1,
+            incorrectAnswers: score.incorrectAnswers,
+        }
+
+    } else{
+        newState = {
+            correctAnswers: score.correctAnswers,
+            incorrectAnswers: score.incorrectAnswers + 1,
+        }
+    }   
+    setScore(newState);
+    getQuestion();
+    setCurrentQuestion(null);
+    loadQuestionAndOptions(currentQuestion);
 }
