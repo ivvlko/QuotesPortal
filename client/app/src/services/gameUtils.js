@@ -14,7 +14,7 @@ export function randomShuffleArray(arr){
 }
 
 
-export function handleAnswer( score, setScore, currentQuestion, setCurrentQuestion, getQuestion, loadQuestionAndOptions, e){
+export function handleAnswer( score, setScore, currentQuestion, setCurrentQuestion, getQuestion, loadQuestionAndOptions, gameIsOver, e){
     let newState = {...score};
     if (currentQuestion.correctAnswer === e.target.innerHTML){
         newState = {
@@ -29,7 +29,13 @@ export function handleAnswer( score, setScore, currentQuestion, setCurrentQuesti
         }
     }   
     setScore(newState);
-    getQuestion();
-    setCurrentQuestion(null);
-    loadQuestionAndOptions(currentQuestion);
+    
+    if (score.correctAnswers + score.incorrectAnswers !== 9){
+        getQuestion();
+        setCurrentQuestion(null);
+        loadQuestionAndOptions(currentQuestion);
+    } else{
+        gameIsOver(score);
+    }
+
 }
